@@ -1,0 +1,31 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Learing React",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MuraliKrishna369/Namaste-React.git"
+  },
+  "keywords": [
+    "Namaste",
+    "React",
+    "Akshay",
+    "Saini"
+  ],
+  "author": "Murali Krishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuraliKrishna369/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/MuraliKrishna369/Namaste-React#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
