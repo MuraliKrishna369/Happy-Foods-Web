@@ -1,6 +1,6 @@
 # Namaste React🚀
 
-# Home Work 
+# Home Work  - Day 2
 - intialize `npm` into your repo
 - install `react` and `react-dom`
 - remove CDN links of react
@@ -10,3 +10,13 @@
 - add `.gitignore ` file
 - add `browserlists`
 - build a production version of your code using `parcel build`
+
+# Day 3 
+- jsx
+- foundations of react
+- babel
+- playing with components
+
+# Day 4
+- planning of food app
+- building it by own
