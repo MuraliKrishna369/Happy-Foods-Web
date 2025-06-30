@@ -1,33 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/*
-Header
-    - logo
-    - nav items
-Body
-    - search
-    - res container
-        - res cards
-Footer
-    - copy right
-    - links
-    - address
-    - contact        
-*/
 const resList = {
-  "statusCode": 0,
   "data": {
-    "statusMessage": "done successfully",
-    "pageOffset": {
-      "nextOffset": "CJpqEJtYKICIg7S2kZakcDDIDjgE",
-      "widgetOffset": {
-        "restaurantCountWidget": "",
-        "collectionV5RestaurantListWidget_SimRestoRelevance_food": "8",
-        "inlineFacetFilter": "",
-        "collectionV5MastheadWidget": ""
-      }
-    },
     "cards": [
       {
         "card": {
@@ -670,7 +642,7 @@ const resList = {
             "info": {
               "id": "999023",
               "name": "Raju Gari Biryani",
-              "cloudinaryImageId": "FOOD_CATALOG/IMAGES/CMS/2025/2/19/797c12af-4ec2-404b-a64f-65d344947e4a_5f697aa5-7590-417e-8ae0-a231fc8fadd2.jpeg",
+              "cloudinaryImageId": "FOOD_CATALOG/IMAGES/CMS/2024/9/30/0a6a6af6-dcfd-4feb-8b4c-d65327c8d849_f7fd42f4-7557-4cd5-96c7-4c5d98114951.jpeg",
               "locality": "Ameerpet",
               "areaName": "Ameerpet",
               "costForTwo": "₹300 for two",
@@ -904,72 +876,7 @@ const resList = {
           }
         }
       }
-    ],
-    "firstOffsetRequest": true,
-    "nextFetch": 3
-  },
-  "tid": "49a90eb0-83a7-4b95-ab25-bff05d86d449",
-  "sid": "lfv41db9-678c-4423-8d18-0df10e75f6e8",
-  "deviceId": "494090fd-479e-a075-bbe8-de30d14fcccb",
-  "csrfToken": "y3SEZtIMzAVl-ibWg43QAyusuNv2CnyrQoATFFyE"
+    ]
+  }
 }
-
-// https://media-assets.swiggy.com/swiggy/image/upload/
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo">
-                <img alt='res-logo' className="res-logo" src="https://t4.ftcdn.net/jpg/01/43/31/51/360_F_143315166_eRGH3svXQ2j8WRjcTMTzAKZ61nKf6dUa.jpg"/>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
-const RestaurentCard = () => {
-    
-    return (
-        <div  className="res-card">
-            <img alt='res-image' className="res-image" src="https://www.thehosteller.com/_next/image/?url=https%3A%2F%2Fstatic.thehosteller.com%2Fhostel%2Fimages%2Fimage.jpg%2Fimage-1744199226259.jpg&w=2048&q=75" />
-            
-        </div>
-    )
-}
-
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                <p>Search</p>
-            </div>
-            <div className="res-container">
-                 <RestaurentCard/>
-                
-            </div>
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header/>
-            <Body/>
-        </div>
-    )
-}
-
-
-// Root Element
-const root = ReactDOM.createRoot(document.getElementById("root"))
-
-
-root.render(<AppLayout/>)
+export default resList

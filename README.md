@@ -20,3 +20,19 @@
 # Day 4
 - planning of food app
 - building it by own
+
+# Day 5
+# Food Restaurant App Design
+
+Header
+    - logo
+    - nav items
+Body
+    - search
+    - res container
+        - res cards
+Footer
+    - copy right
+    - links
+    - address
+    - contact   
