@@ -36,3 +36,9 @@ Footer
     - links
     - address
     - contact   
+
+# Day 6
+- React Hook (useState())
+- Power of React
+- virtual DOM
+- React Fiber

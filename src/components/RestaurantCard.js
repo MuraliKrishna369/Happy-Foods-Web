@@ -2,18 +2,17 @@ import { RES_IMAGE } from "../util/constants"
 
 const RestaurentCard = (props) => {
   const {resData} = props
-  const {info} = resData.card.card
-  const {name, costForTwo, cloudinaryImageId, cuisines, avgRating, sla} = info
+  const {name, costForTwo, cloudinaryImageId, cuisines, avgRating, areaName} = resData
     
     return (
         <div  className="res-card">
             <img alt='res-image' className="res-image" 
             src={RES_IMAGE + cloudinaryImageId} />
             <p>{name}</p>
-            <p>{cuisines.join(', ')}</p>
+            <p>{cuisines}</p>
             <p>{costForTwo }</p>
             <p>{avgRating}</p>
-            <p>{sla.deliveryTime}</p>
+            <p>{areaName}</p>
         </div>
     )
 }
