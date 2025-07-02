@@ -46,6 +46,7 @@
 .res-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .filter-btn{
     margin: 10px;
@@ -57,4 +58,15 @@
     background-color: rgb(0, 255, 136);
     border: none;
     border-radius: 5px;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.shimmer-card{
+    height: 200px;
+    width: 300px;
+    background-color: #f0f0f0;
+    margin: 10px;
 }

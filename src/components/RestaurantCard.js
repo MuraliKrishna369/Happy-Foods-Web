@@ -2,7 +2,7 @@ import { RES_IMAGE } from "../util/constants"
 
 const RestaurentCard = (props) => {
   const {resData} = props
-  const {name, costForTwo, cloudinaryImageId, cuisines, avgRating, areaName} = resData
+  const {name, costForTwo, cloudinaryImageId, cuisines, avgRating, areaName} = resData.info
     
     return (
         <div  className="res-card">
