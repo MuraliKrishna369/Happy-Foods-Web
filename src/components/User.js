@@ -1,16 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const User = (props) => {
-    const [count] = useState(0)
-    const [count2] = useState(2)
-    const {name, place, contact} = props
+    const [count, setCount] = useState(0)
+    useEffect(() => {
+        console.log("useEffect called")
+        const timer = setInterval(() => {
+            console.log("is it stop when we change the page")
+        }, 1000)
+        return () => {
+            console.log("clear up your mess")
+            clearInterval(timer)
+        }
+    },[])
+    
     return (
+        
         <div className="user-card">
-            <h1>Count: {count}</h1>
-            <h1>Count: {count2}</h1>
-            <h3>Name: {name}</h3>
-            <h3>Place: {place}</h3>
-            <p>Contact: {contact}</p>
+           <h3>Count: {count}</h3>
+            <button onClick={() => {setCount(count+1)}}>click</button>
+           <h1>I am functional Component</h1>
         </div>
     )
 }
