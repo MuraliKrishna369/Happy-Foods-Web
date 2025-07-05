@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react'
 
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
+import useOnlineStatus from "../util/useOnlineStatus"
 
 
 
@@ -21,6 +22,9 @@ const Body = () => {
         setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilteredListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
+    const onlineStatus = useOnlineStatus()
+    if(!onlineStatus) return <h1>Please Check Your Internet Connection</h1>
+
     return (
         listOfRestaurants.length === 0?  <Shimmer/> : 
         <div className="body">
