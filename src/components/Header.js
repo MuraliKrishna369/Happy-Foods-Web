@@ -5,17 +5,17 @@ import useOnlineStatus from "../util/useOnlineStatus"
 const Header = () => {
     const onlineStauts = useOnlineStatus()
     return (
-        <div className="header">
-            <div className="logo">
-                <img alt='res-logo' className="res-logo" src={RES_LOGO}/>
+        <div className="flex justify-between items-center bg-pink-50 p-1.5">
+            <div className="px-1.5">
+                <img alt='res-logo' className="w-1/6" src={RES_LOGO}/>
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Online Status: {onlineStauts? "✅": "🔴"}</li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li>Cart</li>
+            <div className="px-12">
+                <ul className="flex text-sm">
+                    <li className="px-6 py-1.5 rounded-lg cursor-pointer hover:bg-green-300">Online Status: {onlineStauts? "✅": "🔴"}</li>
+                    <li className="px-6 py-1.5 rounded-lg cursor-pointer  hover:bg-green-300"><Link to="/">Home</Link></li>
+                    <li className="px-6 py-1.5 rounded-lg cursor-pointer  hover:bg-green-300"><Link to="/about">About Us</Link></li>
+                    <li className="px-6 py-1.5 rounded-lg cursor-pointer  hover:bg-green-300"><Link to="/contact">Contact Us</Link></li>
+                    <li className="px-6 py-1.5 rounded-lg cursor-pointer  hover:bg-green-300">Cart</li>
                 </ul>
             </div>
         </div>

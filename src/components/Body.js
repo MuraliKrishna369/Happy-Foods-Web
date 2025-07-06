@@ -28,16 +28,16 @@ const Body = () => {
     return (
         listOfRestaurants.length === 0?  <Shimmer/> : 
         <div className="body">
-            <div className="search">           
-                <input type="text" className="search-box" value={searchText}  onChange={(e) => {
+            <div className=" flex justify-center items-center m-2">           
+                <input type="search" className="w-48 h-6 p-2 border text-sm" value={searchText}  onChange={(e) => {
                      setSearchText(e.target.value)
                     }}/>
-                <button className="search-btn" onClick={() => {   
+                <button className="p-2 m-2 bg-gray-300 hover:bg-green-300 border-0 rounded-lg cursor-pointer text-sm" onClick={() => {   
                   const filterListOfRestaurants = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
                   setFilteredListOfRestaurants(filterListOfRestaurants)
-                }}>search</button>
+                }}>Search</button>
             </div>
-            <div className="res-container">
+            <div className="flex justify-center flex-wrap">
                  {filteredListOfRestaurants.map(function (restaurant){
                     const {id} = restaurant.info
                   return <Link key={id} to={"/restaurant/"+id}><RestaurentCard  resData={restaurant}/></Link>
