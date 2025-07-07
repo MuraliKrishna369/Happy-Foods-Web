@@ -1,0 +1,25 @@
+import {RES_IMAGE} from "../util/constants"
+
+const ItemsList = ({itemsList}) => {
+
+    return(
+        <div className="my-2">
+            {itemsList.map((item) => {
+                const {id, name, ratings, defaultPrice, description,imageId} = item.card.info
+                return (
+                    <div key={id} className="border-b-2 border-gray-200 p-2 flex">
+                        <div className="w-8/12 text-xs">
+                            <h1 className="text-lg font-medium">{name}</h1>
+                            <h1 className="font-medium">₹{defaultPrice/100}</h1>
+                            <p >{description}</p>
+                        </div>
+                        <div className="w-4/12">
+                            <img src={RES_IMAGE+imageId}/>
+                        </div>
+                    </div>
+                )
+            })}
+        </div>
+    )
+}
+export default ItemsList
