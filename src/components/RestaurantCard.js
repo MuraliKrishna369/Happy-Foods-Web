@@ -17,4 +17,20 @@ const RestaurentCard = (props) => {
     )
 }
 
+// we want to show promoted cards and other also
+// but don't change the restaurant card components
+// but we want promoted or not feature
+// so we use HOC
+
+export const withPromotedLabel = (RestaurentCard) => {
+    return (props) => {
+        return (
+            <div>
+                <span className="text-white bg-black  p-2 rounded-lg text-xs absolute">Promoted</span>
+                <RestaurentCard {...props} />
+            </div>
+        )
+    }
+}
+
 export default RestaurentCard

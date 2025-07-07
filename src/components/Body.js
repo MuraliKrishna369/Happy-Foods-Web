@@ -1,4 +1,4 @@
-import RestaurentCard from "./RestaurantCard"
+import RestaurentCard, {withPromotedLabel} from "./RestaurantCard"
 
 import {useEffect, useState} from 'react'
 
@@ -12,7 +12,7 @@ const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]) 
     const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState([])
     const [searchText, setSearchText] = useState("")
-
+    const RestaurantCardPromoted = withPromotedLabel(RestaurentCard);
     useEffect(() => {
         fetchData();
     },[])
@@ -39,8 +39,10 @@ const Body = () => {
             </div>
             <div className="flex justify-center flex-wrap">
                  {filteredListOfRestaurants.map(function (restaurant){
-                    const {id} = restaurant.info
-                  return <Link key={id} to={"/restaurant/"+id}><RestaurentCard  resData={restaurant}/></Link>
+                    const {id, avgRating} = restaurant.info
+                  return <Link key={id} to={"/restaurant/"+id}>
+                    { avgRating > 4.5? <RestaurantCardPromoted resData={restaurant}/> : <RestaurentCard  resData={restaurant}/>}
+                    </Link>
                  })}                  
                 
             </div>
