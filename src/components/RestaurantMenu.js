@@ -1,16 +1,26 @@
+const { useState } = require("react")
 import Shimmer from "./Shimmer"
 import { useParams } from "react-router-dom"
 import useRestaurantMenu from "../util/useRestaurantMenu"
 import RestaurantCategory from "./RestaurantCategory"
 
+
+
 const RestaurantMenu = () => {
+   
     const {resId} = useParams()
+    
     // Create Custom hook
     const resInfo = useRestaurantMenu(resId)
+    const [showIndex, setShowIndex] = useState(null)
+    const [activeCategory, setActiveCategory] = useState(false)
 
     if (resInfo === null) return <Shimmer/>
 
     const {name, avgRating, city, costForTwoMessage, sla, totalRatingsString} = resInfo.cards[2].card.card.info
+
+    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    (category) => category.card.card["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
 
     return (
        
@@ -25,7 +35,15 @@ const RestaurantMenu = () => {
                     </div>
                 </div>
                 
-                <RestaurantCategory resInfo={resInfo}/>
+                {categories.map((category, index) => 
+                        // There is a little bug over here
+                        <RestaurantCategory key={category.card.card.title} 
+                        data={category.card.card}
+                        setActiveCategory={() => {setActiveCategory(!activeCategory)}}
+                        setShowIndex={() => { activeCategory ? setShowIndex(index): setShowIndex(null)}}
+                        showItems={index === showIndex ? true: false}
+                        />)}
+               
                     
             </div>
         </div>    

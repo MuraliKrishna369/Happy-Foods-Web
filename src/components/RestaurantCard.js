@@ -1,11 +1,16 @@
+import { useContext } from "react"
 import { RES_IMAGE } from "../util/constants"
+import ThemeContext from "../util/ThemeContext"
 
 const RestaurentCard = (props) => {
   const {resData} = props
   const {name, costForTwo, cloudinaryImageId, cuisines, avgRating, areaName} = resData.info
+
+  const {darkTheme} = useContext(ThemeContext)
+  const restaurantCardStyles = darkTheme ? "bg-gray-500 text-white": "bg-gray-200"
     
     return (
-        <div  className="bg-gray-200 w-48 text-xs m-2.5 p-3 flex flex-col rounded-lg">
+        <div  className={`${restaurantCardStyles} w-48 text-xs m-2.5 p-3 flex flex-col rounded-lg`}>
             <img alt='res-image' className="w-[200px] rounded-2xl" 
             src={RES_IMAGE + cloudinaryImageId} />
             <p>{name}</p>

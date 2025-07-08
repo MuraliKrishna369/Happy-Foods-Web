@@ -1,27 +1,28 @@
+
 import { useState } from "react";
 import ItemsList from "./ItemsList";
 
-const RestaurantCategory = ({resInfo}) => {
-    const [showItems, setItems] = useState(false)
+const RestaurantCategory = ({data, showItems, setShowIndex, setActiveCategory}) => {
+    
+    const {title, itemCards} = data
+   
 
-    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-    (category) => category.card.card["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    const handleClick = () => {
+       setActiveCategory() 
+       setShowIndex()
+      
+
+    }
 
     return (
         <ul className="w-full">
-            {categories.map((each) => {
-                const {categoryId, title, itemCards} = each.card.card
-                return (
-                    <li key={categoryId} className="list-none m-2 p-2  border border-gray-200 rounded-lg " >
-                        <div onClick={()=> setItems(!showItems)} className="flex justify-between">
-                            <p className="text-lg font-bold">{title}({itemCards.length})</p>
-                            <span>⬇️</span>
-                        </div>
-                        {showItems && <ItemsList itemsList={itemCards}/>}
-                        
-                    </li>
-                )
-            })}
+            <li className="list-none m-2 p-2  border border-gray-200 rounded-lg " >
+                <div onClick={handleClick} className="flex justify-between cursor-pointer">
+                    <span className="text-lg font-bold">{title}({itemCards.length})</span>
+                    <span>⬇️</span>
+                </div>
+                {showItems && <ItemsList itemsList={itemCards}/>}
+            </li>
         </ul>
     )
 }
