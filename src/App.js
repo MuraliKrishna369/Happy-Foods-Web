@@ -6,9 +6,14 @@ import Body from "./components/Body"
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Cart from "./components/Cart";
 
 import ThemeContext from "./util/ThemeContext";
 import { useState, useContext } from "react";
+import { Provider} from "react-redux";
+import appStore from "./util/appStore";
+
+
 
 
 import {
@@ -26,12 +31,14 @@ const AppLayout = () => {
     const {darkTheme} = useContext(ThemeContext)
 
     return (
+        <Provider store={appStore}>
         <ThemeContext.Provider value={{darkTheme: theme, setTheme, userName, setUserName}}>
             <div>
                 <Header/>
                 <Outlet />  {/**in the outlet replaced with our children elements based on their path */}
             </div>
         </ThemeContext.Provider>
+        </Provider>
     )
 }
 
@@ -51,6 +58,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact/>
+            },
+            {
+                path: "/cart",
+                element: <Cart/>
             },
             {
                 path: "/restaurant/:resId",

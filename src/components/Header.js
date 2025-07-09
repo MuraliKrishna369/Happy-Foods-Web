@@ -3,10 +3,14 @@ import { Link } from "react-router-dom"
 import useOnlineStatus from "../util/useOnlineStatus"
 import ThemeContext from "../util/ThemeContext"
 import { useContext } from "react"
+const {useSelector} = require("react-redux")
+
 
 const Header = () => {
     const onlineStauts = useOnlineStatus()
     const {darkTheme, setTheme, userName} = useContext(ThemeContext)
+    const cartItems = useSelector((state) => state.cart.items)
+    console.log(cartItems)
 
     const navItemStyles = darkTheme ? "px-4 py-1.5 m-2 rounded-lg cursor-pointer" : "px-4 py-1.5 m-2 rounded-lg cursor-pointer hover:bg-zinc-200"
     
@@ -27,7 +31,7 @@ const Header = () => {
                         <li className={ navItemStyles}><Link to="/">Home</Link></li>
                         <li className={navItemStyles}><Link to="/about">About Us</Link></li>
                         <li className={ navItemStyles}><Link to="/contact">Contact Us</Link></li>
-                        <li className={navItemStyles}>Cart</li>
+                        <li className={navItemStyles}><Link to="/cart">Cart🛒-{cartItems.length}</Link></li>
                         <li className={navItemStyles}>{userName}</li>
                         <li className={navItemStyles} onClick={handleTheme}>{darkTheme ? "🌛" :"🌞"}</li>
                         
