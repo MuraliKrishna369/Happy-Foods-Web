@@ -4,12 +4,12 @@ const User = (props) => {
     const [count, setCount] = useState(0)
     useEffect(() => {
         console.log("useEffect called")
-        const timer = setInterval(() => {
-            console.log("is it stop when we change the page")
-        }, 1000)
+        // const timer = setInterval(() => {
+        //     console.log("is it stop when we change the page")
+        // }, 1000)
         return () => {
-            console.log("clear up your mess")
-            clearInterval(timer)
+            // console.log("clear up your mess")
+            // clearInterval(timer)
         }
     },[])
     

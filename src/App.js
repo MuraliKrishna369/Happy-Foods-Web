@@ -28,11 +28,11 @@ const About = lazy(() => import("./components/About"))
 const AppLayout = () => {
     const [theme, setTheme] = useState(false)
     const [userName, setUserName] = useState("Murali")
-    const {darkTheme} = useContext(ThemeContext)
-
+   
+    
     return (
         <Provider store={appStore}>
-        <ThemeContext.Provider value={{darkTheme: theme, setTheme, userName, setUserName}}>
+        <ThemeContext.Provider value={{darkTheme: theme, updateTheme: setTheme , userName, setUserName}}>
             <div>
                 <Header/>
                 <Outlet />  {/**in the outlet replaced with our children elements based on their path */}

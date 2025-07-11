@@ -8,16 +8,15 @@ const {useSelector} = require("react-redux")
 
 const Header = () => {
     const onlineStauts = useOnlineStatus()
-    const {darkTheme, setTheme, userName} = useContext(ThemeContext)
+    const {darkTheme, updateTheme, userName} = useContext(ThemeContext)
     const cartItems = useSelector((state) => state.cart.items)
-    console.log(cartItems)
 
     const navItemStyles = darkTheme ? "px-4 py-1.5 m-2 rounded-lg cursor-pointer" : "px-4 py-1.5 m-2 rounded-lg cursor-pointer hover:bg-zinc-200"
     
 
 
     const handleTheme = () => {
-        setTheme(!darkTheme)
+        updateTheme(!darkTheme)
     }
     return (
        
@@ -33,7 +32,7 @@ const Header = () => {
                         <li className={ navItemStyles}><Link to="/contact">Contact Us</Link></li>
                         <li className={navItemStyles}><Link to="/cart">Cart🛒-{cartItems.length}</Link></li>
                         <li className={navItemStyles}>{userName}</li>
-                        <li className={navItemStyles} onClick={handleTheme}>{darkTheme ? "🌛" :"🌞"}</li>
+                        <button className={navItemStyles} onClick={handleTheme}>{darkTheme ? "Dark" :"Light"}</button>
                         
                     </ul>
                 </div>
