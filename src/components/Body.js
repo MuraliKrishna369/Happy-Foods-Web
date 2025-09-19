@@ -4,7 +4,7 @@ import {useEffect, useState, useContext} from 'react'
 
 
 import Shimmer from "./Shimmer"
-import { Link } from "react-router-dom"
+import { Link } from "react-router"
 import useOnlineStatus from "../util/useOnlineStatus"
 import ThemeContext from "../util/ThemeContext"
 

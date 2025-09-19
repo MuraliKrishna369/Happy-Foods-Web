@@ -1,6 +1,6 @@
 const { useState } = require("react")
 import Shimmer from "./Shimmer"
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router"
 import useRestaurantMenu from "../util/useRestaurantMenu"
 import RestaurantCategory from "./RestaurantCategory"
 

@@ -1,5 +1,5 @@
 import { RES_LOGO } from "../util/constants"
-import { Link } from "react-router-dom"
+import { Link } from "react-router"
 import useOnlineStatus from "../util/useOnlineStatus"
 import ThemeContext from "../util/ThemeContext"
 import { useContext } from "react"
