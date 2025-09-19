@@ -2,6 +2,7 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "Learing React",
+  "type": "module",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
