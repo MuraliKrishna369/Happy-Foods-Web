@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body"
@@ -19,10 +19,6 @@ import { createBrowserRouter, Outlet } from "react-router";
 import { RouterProvider } from "react-router";
 
 
-
-
-const About = lazy(() => import("./components/About"))
-
 const AppLayout = () => {
     const [theme, setTheme] = useState(false)
     const [userName, setUserName] = useState("Murali")
@@ -31,10 +27,10 @@ const AppLayout = () => {
     return (
         <Provider store={appStore}>
         <ThemeContext.Provider value={{darkTheme: theme, updateTheme: setTheme , userName, setUserName}}>
-            <div>
+           
                 <Header/>
-                <Outlet/> {/**in the outlet replaced with our children elements based on their path */}
-            </div>
+                <Outlet/> 
+            
         </ThemeContext.Provider>
         </Provider>
     )
@@ -51,7 +47,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <Suspense fallback={<h1>Loading...</h1>}><About/></Suspense>
+                element: <About/>
             },
             {
                 path: "/contact",
