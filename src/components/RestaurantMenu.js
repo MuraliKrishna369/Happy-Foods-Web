@@ -7,9 +7,7 @@ import RestaurantCategory from "./RestaurantCategory"
 
 
 const RestaurantMenu = () => {
-   
     const {resId} = useParams()
-    
     // Create Custom hook
     const resInfo = useRestaurantMenu(resId)
     const [showIndex, setShowIndex] = useState(null)
