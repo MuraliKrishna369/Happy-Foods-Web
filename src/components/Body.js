@@ -8,6 +8,7 @@ import { Link } from "react-router"
 import useOnlineStatus from "../util/useOnlineStatus"
 import ThemeContext from "../util/ThemeContext"
 import { BASE_URL } from "../util/constants"
+import axios from "axios"
 
 
 
@@ -25,7 +26,7 @@ const Body = () => {
         fetchData();
     },[])
     const fetchData = async () => {
-        const swiggyData = await fetch(BASE_URL+"/restaurants")
+        const swiggyData = await axios.get(BASE_URL+"/restaurants", {withCredentials: true})
         const json = await swiggyData.json()
         setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilteredListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
