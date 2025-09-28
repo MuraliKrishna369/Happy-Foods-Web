@@ -4,8 +4,7 @@ const ThemeContext = createContext({
     darkTheme: false,
     updateTheme: () => {
 
-    },
-    userName: "Default User"
+    }
 })
 
 

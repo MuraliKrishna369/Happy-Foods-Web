@@ -10,14 +10,16 @@ const RestaurentCard = (props) => {
   const restaurantCardStyles = darkTheme ? "bg-gray-500 text-white": "bg-gray-200"
     
     return (
-        <div  className={`${restaurantCardStyles} w-48 text-xs m-2.5 p-3 flex flex-col rounded-lg`}>
+        <div  className={`${restaurantCardStyles} w-42 text-[10px] m-2.5  flex flex-col rounded-2xl h-74`}>
             <img alt='res-image' className="w-[200px] rounded-2xl" 
             src={RES_IMAGE + cloudinaryImageId} />
-            <p>{name}</p>
-            <p>{cuisines.slice(0,4).join(',')}</p>
-            <p>{costForTwo }</p>
-            <p>{avgRating}</p>
-            <p>{areaName}</p>
+            <div className="p-2">
+                <p>{name}</p>
+                <p>{cuisines.slice(0,4).join(',')}</p>
+                <p>{costForTwo }</p>
+                <p>{avgRating}</p>
+                <p>{areaName}</p>
+            </div>
         </div>
     )
 }

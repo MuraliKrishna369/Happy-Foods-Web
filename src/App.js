@@ -21,12 +21,11 @@ import { RouterProvider } from "react-router";
 
 const AppLayout = () => {
     const [theme, setTheme] = useState(false)
-    const [userName, setUserName] = useState("Murali")
    
     
     return (
         <Provider store={appStore}>
-        <ThemeContext.Provider value={{darkTheme: theme, updateTheme: setTheme , userName, setUserName}}>
+        <ThemeContext.Provider value={{darkTheme: theme, updateTheme: setTheme }}>
            
                 <Header/>
                 <Outlet/> 
