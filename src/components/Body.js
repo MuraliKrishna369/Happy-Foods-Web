@@ -27,9 +27,10 @@ const Body = () => {
     },[])
     const fetchData = async () => {
         const swiggyData = await axios.get(BASE_URL+"/restaurants", {withCredentials: true})
-        const json = await swiggyData.json()
-        setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      
+        
+        setListOfRestaurants(swiggyData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredListOfRestaurants(swiggyData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     const onlineStatus = useOnlineStatus()
     const inputBoxStyles = darkTheme ? "w-48 h-6 p-2 border border-white text-sm text-white" : "w-48 h-6 p-2 border text-sm"
